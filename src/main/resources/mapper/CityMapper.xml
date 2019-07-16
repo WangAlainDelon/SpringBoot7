@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wx.springboot_docker.dao.CityMapper">
+    <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！ -->
+    <resultMap id="BaseResultMap" type="com.wx.springboot_docker.domain.City">
+        <id column="city_id" property="city_id" jdbcType="INTEGER"/>
+        <result column="city" property="city" jdbcType="VARCHAR"/>
+        <result column="country_id" property="country_id" jdbcType="INTEGER"/>
+        <result column="last_update" property="last_update" jdbcType="TIMESTAMP"/>
+        <result column="country" property="country" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+    <select id="selectByCountryId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+
+        SELECT a.*,b.country FROM city a JOIN country b ON a.country_id=b.country_id AND
+        1 = 1
+        <if test="id != null and id !=''">
+            AND b.country_id = #{id,jdbcType=INTEGER }
+        </if>
+    </select>
+</mapper>

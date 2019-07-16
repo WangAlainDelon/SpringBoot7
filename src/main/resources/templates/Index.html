@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<H1>Hello Mr,Wang <span th:text="${liu}"></span></H1>
+<div>
+    <ol>
+        <li>List循环：
+            <table border="1">
+                <tr>
+                    <th>城市ID</th>
+                    <th>城市名字</th>
+                    <th>国家ID</th>
+                    <th>更新时间</th>
+                    <th>国家</th>
+
+                </tr>
+                <tr th:each="city,userStat : ${cities}">
+                    <td th:text="${city.city_id}"></td>
+                    <td th:text="${city.city}"></td>
+                    <td th:text="${city.country_id}"></td>
+                    <th th:text="${city.last_update}"></th>
+                    <th th:text="${city.country}"></th>
+
+                </tr>
+            </table>
+        </li>
+        <!--<li>Map循环：
+            <div th:each="mapS:${map}">
+                <div th:text="${mapS}"></div>
+            </div>
+        </li>-->
+       <!-- <li>数组循环：
+            <div th:each="arrayS:${arrays}">
+                <div th:text="${arrayS}"></div>
+            </div>
+        </li>-->
+    </ol>
+</div>
+
+</body>
+</html>
