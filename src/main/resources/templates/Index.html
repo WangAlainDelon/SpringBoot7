@@ -11,19 +11,19 @@
         <li>List循环：
             <table border="1">
                 <tr>
-                    <th>城市ID</th>
-                    <th>城市名字</th>
-                    <th>国家ID</th>
+                    <th>ID</th>
+                    <th>name</th>
+                   <!-- <th>国家ID</th>
                     <th>更新时间</th>
-                    <th>国家</th>
+                    <th>国家</th>-->
 
                 </tr>
-                <tr th:each="city,userStat : ${cities}">
-                    <td th:text="${city.city_id}"></td>
-                    <td th:text="${city.city}"></td>
-                    <td th:text="${city.country_id}"></td>
+                <tr th:each="user,userStat : ${users}">
+                    <td th:text="${city.id}"></td>
+                    <td th:text="${city.name}"></td>
+                   <!-- <td th:text="${city.country_id}"></td>
                     <th th:text="${city.last_update}"></th>
-                    <th th:text="${city.country}"></th>
+                    <th th:text="${city.country}"></th>-->
 
                 </tr>
             </table>

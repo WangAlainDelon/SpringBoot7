@@ -10,23 +10,23 @@ spring:
     prefix:  classpath:/templates/
   redis:
     timeout: 2000ms
-    host: 127.0.0.1
+    host: redis
     port: 6379
   profiles:
         active: prod
   datasource:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/sakila?useSSL=true&useUnicode=true&characterEncoding=utf-8
-      username: root
-      password: 133309
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/persontest?characterEncoding=utf8
+    username: root
+    password: root
   jpa:
       hibernate:
         ddl-auto: create
       show-sql: true
 
 mybatis:
-  mapper-locations: classpath:mapper/CityMapper.xml
-  type-aliases-package: com.wx.springboot_docker.domain.City
+  mapper-locations: classpath:mapper/UserMapper.xml
+  type-aliases-package: com.wx.springboot_docker.domain.User
 
 
 
